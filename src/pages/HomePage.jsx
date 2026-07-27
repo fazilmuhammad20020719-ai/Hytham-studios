@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import TrustedLeaders from '../components/TrustedLeaders';
 import ContentSystematized from '../components/ContentSystematized';
 import HighLevelRepurposing from '../components/HighLevelRepurposing';
+import ViralEdits from '../components/ViralEdits';
 
 /* ─── Floating Particle Config ─── */
 const PARTICLES = [
@@ -207,6 +208,9 @@ const HomePage = () => {
 
       {/* ── HIGH LEVEL REPURPOSING SECTION ── */}
       <HighLevelRepurposing />
+
+      {/* ── VIRAL EDITS SECTION ── */}
+      <ViralEdits />
 
     </div>
   );
