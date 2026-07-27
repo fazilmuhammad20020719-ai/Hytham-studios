@@ -169,7 +169,7 @@ const HighLevelRepurposing = () => {
           const x2 = x0 * Math.cos(angleY) + z1 * Math.sin(angleY);
           const z2 = -x0 * Math.sin(angleY) + z1 * Math.cos(angleY);
 
-          const scale = fov / (distance + z2);
+          const scale = (distance + z2) / distance;
           const px = cx + x2 * scale;
           const py = cy + y1 * scale;
           const alpha = Math.max(0.12, (z2 + radius) / (2 * radius));
@@ -205,15 +205,49 @@ const HighLevelRepurposing = () => {
         ctx.stroke();
       }
 
-      // Draw Vertex dots on globe surface
+      // 3. Draw Equatorial Glowing Energy Ring
+      ctx.beginPath();
+      const eqI = Math.floor(latCount / 2);
+      for (let j = 0; j <= lonCount; j++) {
+        const pt = grid[eqI][j];
+        if (j === 0) ctx.moveTo(pt.x, pt.y);
+        else ctx.lineTo(pt.x, pt.y);
+      }
+      ctx.strokeStyle = `rgba(245, 166, 35, 0.65)`;
+      ctx.lineWidth = 1.8;
+      ctx.stroke();
+
+      // 4. Draw BIGGER Vertex dots on globe surface with dual-layer glow
       for (let i = 0; i <= latCount; i++) {
         for (let j = 0; j <= lonCount; j++) {
           const pt = grid[i][j];
-          if (pt.z > -30) {
+          if (pt.z > -45) {
+            // Depth-scaled dot radius: 2.4px to 4.2px
+            const dotRadius = Math.max(2.4, 3.4 * (pt.alpha));
+
+            // Outer glowing aura halo
             ctx.beginPath();
-            ctx.arc(pt.x, pt.y, 1.6, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(110, 231, 183, ${pt.alpha * 0.85})`;
+            ctx.arc(pt.x, pt.y, dotRadius * 1.85, 0, Math.PI * 2);
+            ctx.fillStyle = (i + j) % 2 === 0
+              ? `rgba(110, 231, 183, ${pt.alpha * 0.28})`
+              : `rgba(245, 166, 35, ${pt.alpha * 0.28})`;
             ctx.fill();
+
+            // Core vertex dot
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, dotRadius, 0, Math.PI * 2);
+            ctx.fillStyle = (i + j) % 2 === 0
+              ? `rgba(110, 231, 183, ${pt.alpha * 0.95})`
+              : `rgba(253, 224, 71, ${pt.alpha * 0.95})`;
+            ctx.fill();
+
+            // Inner crisp white center highlight
+            if (pt.z > 20) {
+              ctx.beginPath();
+              ctx.arc(pt.x, pt.y, dotRadius * 0.45, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(255, 255, 255, ${pt.alpha})`;
+              ctx.fill();
+            }
           }
         }
       }
@@ -239,17 +273,18 @@ const HighLevelRepurposing = () => {
         const gy1 = gy0 * Math.cos(currentAngleX) - gz0 * Math.sin(currentAngleX);
         const gz1 = gy0 * Math.sin(currentAngleX) + gz0 * Math.cos(currentAngleX);
 
-        // Perspective projections
-        const scaleB = fov / (distance + z1);
+        // Correct Perspective Projections: (distance + z) / distance
+        const scaleB = (distance + z1) / distance;
         const bx = cx + x0 * scaleB;
         const by = cy + y1 * scaleB;
 
-        const scaleG = fov / (distance + gz1);
+        const scaleG = (distance + gz1) / distance;
         const gpx = cx + gx0 * scaleG;
         const gpy = cy + gy1 * scaleG;
 
-        const isFront = z1 > -20;
-        const alpha = Math.max(0.25, (z1 + orbitRadius) / (2 * orbitRadius));
+        const isFront = z1 > 0;
+        // Inverted/Corrected Alpha: When icon is big (z1 > 0), opacity reaches 1.0 (100%). When icon is small (z1 < 0), opacity reduces to 0.1.
+        const alpha = Math.max(0.1, Math.min(1.0, (z1 + orbitRadius) / (2 * orbitRadius)));
         const zIndex = Math.round(z1 + 500);
 
         const isHovered = hoveredNode === plat.id;
