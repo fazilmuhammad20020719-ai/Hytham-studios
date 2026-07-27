@@ -431,8 +431,8 @@ const HighLevelRepurposing = () => {
                 >
                   <div
                     className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#0c1017]/95 border shadow-2xl backdrop-blur-md transition-all duration-300 cursor-pointer ${isActive
-                        ? 'border-amber-400/80 shadow-amber-500/20 text-white scale-105'
-                        : 'border-white/[0.16] shadow-black hover:border-white/40'
+                      ? 'border-amber-400/80 shadow-amber-500/20 text-white scale-105'
+                      : 'border-white/[0.16] shadow-black hover:border-white/40'
                       }`}
                   >
                     {/* Platform Icon */}
@@ -490,8 +490,8 @@ const HighLevelRepurposing = () => {
                       key={plat.id}
                       onClick={() => setActivePlatformId(plat.id)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${activePlatform.id === plat.id
-                          ? 'bg-amber-400 text-black shadow-md shadow-amber-400/20'
-                          : 'bg-white/[0.05] text-slate-300 hover:bg-white/10 hover:text-white'
+                        ? 'bg-amber-400 text-black shadow-md shadow-amber-400/20'
+                        : 'bg-white/[0.05] text-slate-300 hover:bg-white/10 hover:text-white'
                         }`}
                     >
                       {plat.name}

@@ -3,6 +3,7 @@ import TrustedLeaders from '../components/TrustedLeaders';
 import ContentSystematized from '../components/ContentSystematized';
 import HighLevelRepurposing from '../components/HighLevelRepurposing';
 import ViralEdits from '../components/ViralEdits';
+import LongFormStandard from '../components/LongFormStandard';
 
 /* ─── Floating Particle Config ─── */
 const PARTICLES = [
@@ -211,6 +212,9 @@ const HomePage = () => {
 
       {/* ── VIRAL EDITS SECTION ── */}
       <ViralEdits />
+
+      {/* ── LONG FORM STANDARD SECTION ── */}
+      <LongFormStandard />
 
     </div>
   );
