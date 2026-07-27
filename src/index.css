@@ -39,32 +39,63 @@
     from { opacity: 0; }
     to { opacity: 1; }
   }
-  
+
   @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-16px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes pulseGlow {
     0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.7; transform: scale(1.05); }
+    50%       { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  /* ── New motion keyframes ── */
+  @keyframes blurReveal {
+    from { opacity: 0; filter: blur(14px); transform: translateY(18px) scale(0.97); }
+    to   { opacity: 1; filter: blur(0px);  transform: translateY(0)    scale(1); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.5) rotate(-15deg); }
+    to   { opacity: 1; transform: scale(1)   rotate(0deg); }
+  }
+
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { color: #f5a623; }
+    50%       { color: #ffcc55; }
+  }
+
+  @keyframes particleDrift {
+    0%   { transform: translateY(0)   translateX(0)   scale(1);   opacity: 0.6; }
+    50%  { transform: translateY(-30px) translateX(15px)  scale(1.2); opacity: 1; }
+    100% { transform: translateY(-60px) translateX(-10px) scale(0.8); opacity: 0; }
+  }
+
+  @keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  @keyframes badgePop {
+    0%   { opacity: 0; transform: scale(0.7) translateY(-8px); }
+    70%  { transform: scale(1.05) translateY(2px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
   }
 }
 
@@ -93,6 +124,45 @@
   pointer-events: none;
   z-index: 1;
 }
+
+/* Floating particle dots */
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleDrift linear infinite;
+  z-index: 2;
+}
+
+/* Mouse parallax orb */
+.parallax-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.12s ease-out;
+  z-index: 0;
+}
+
+/* Shimmer text effect on orange span */
+.text-shimmer {
+  background: linear-gradient(90deg, #f5a623 0%, #ffdd88 40%, #f5a623 60%, #e09315 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* CTA float effect */
+.cta-float {
+  animation: floatY 3.5s ease-in-out infinite;
+}
+
+/* Blurred reveal utility */
+.motion-blur-reveal {
+  animation: blurReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 
 /* Glassmorphic Navbar Container */
 .glass-nav {
@@ -188,22 +258,19 @@
 }
 
 .stat-icon.green {
-  background: radial-gradient(circle at center, rgba(110, 231, 183, 0.2) 0%, rgba(16, 185, 129, 0.08) 100%);
+  background: rgba(110, 231, 183, 0.08);
   color: #6ee7b7;
-  border: 1px solid rgba(110, 231, 183, 0.25);
-  box-shadow: 0 4px 20px rgba(110, 231, 183, 0.15);
+  border: 1px solid rgba(110, 231, 183, 0.2);
 }
 
 .stat-icon.blue {
-  background: radial-gradient(circle at center, rgba(129, 140, 248, 0.2) 0%, rgba(99, 102, 241, 0.08) 100%);
+  background: rgba(129, 140, 248, 0.08);
   color: #818cf8;
-  border: 1px solid rgba(129, 140, 248, 0.25);
-  box-shadow: 0 4px 20px rgba(129, 140, 248, 0.15);
+  border: 1px solid rgba(129, 140, 248, 0.2);
 }
 
 .stat-icon.yellow {
-  background: radial-gradient(circle at center, rgba(253, 224, 71, 0.2) 0%, rgba(234, 179, 8, 0.08) 100%);
+  background: rgba(253, 224, 71, 0.08);
   color: #fde047;
-  border: 1px solid rgba(253, 224, 71, 0.25);
-  box-shadow: 0 4px 20px rgba(253, 224, 71, 0.15);
+  border: 1px solid rgba(253, 224, 71, 0.2);
 }
