@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import TrustedLeaders from '../components/TrustedLeaders';
+import ContentSystematized from '../components/ContentSystematized';
+import HighLevelRepurposing from '../components/HighLevelRepurposing';
 
 /* ─── Floating Particle Config ─── */
 const PARTICLES = [
@@ -197,8 +199,14 @@ const HomePage = () => {
         </footer>
       </section>
 
-      {/* ── SEPARATE SOLID BG COMPONENT: TRUSTED LEADERS ── */}
+      {/* ── TRUSTED LEADERS SECTION ── */}
       <TrustedLeaders />
+
+      {/* ── CONTENT PRODUCTION, SYSTEMATIZED SECTION ── */}
+      <ContentSystematized />
+
+      {/* ── HIGH LEVEL REPURPOSING SECTION ── */}
+      <HighLevelRepurposing />
 
     </div>
   );
