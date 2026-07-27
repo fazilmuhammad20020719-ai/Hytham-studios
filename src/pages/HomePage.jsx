@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useCallback } from 'react';
 
 /* ─── Floating Particle Config ─── */
 const PARTICLES = [
-  { size: 4,  top: '18%', left: '12%',  duration: '9s',  delay: '0s',   color: 'rgba(245,166,35,0.55)' },
-  { size: 6,  top: '65%', left: '8%',   duration: '12s', delay: '1.5s', color: 'rgba(129,140,248,0.45)' },
-  { size: 3,  top: '40%', left: '88%',  duration: '8s',  delay: '0.8s', color: 'rgba(245,166,35,0.4)' },
-  { size: 5,  top: '75%', left: '82%',  duration: '11s', delay: '2s',   color: 'rgba(110,231,183,0.4)' },
-  { size: 3,  top: '25%', left: '72%',  duration: '7s',  delay: '3s',   color: 'rgba(245,166,35,0.3)' },
-  { size: 4,  top: '55%', left: '50%',  duration: '14s', delay: '0.3s', color: 'rgba(129,140,248,0.3)' },
-  { size: 2,  top: '85%', left: '35%',  duration: '10s', delay: '1s',   color: 'rgba(110,231,183,0.5)' },
-  { size: 5,  top: '10%', left: '55%',  duration: '13s', delay: '2.5s', color: 'rgba(253,224,71,0.35)' },
+  { size: 4, top: '18%', left: '12%', duration: '9s', delay: '0s', color: 'rgba(245,166,35,0.55)' },
+  { size: 6, top: '65%', left: '8%', duration: '12s', delay: '1.5s', color: 'rgba(129,140,248,0.45)' },
+  { size: 3, top: '40%', left: '88%', duration: '8s', delay: '0.8s', color: 'rgba(245,166,35,0.4)' },
+  { size: 5, top: '75%', left: '82%', duration: '11s', delay: '2s', color: 'rgba(110,231,183,0.4)' },
+  { size: 3, top: '25%', left: '72%', duration: '7s', delay: '3s', color: 'rgba(245,166,35,0.3)' },
+  { size: 4, top: '55%', left: '50%', duration: '14s', delay: '0.3s', color: 'rgba(129,140,248,0.3)' },
+  { size: 2, top: '85%', left: '35%', duration: '10s', delay: '1s', color: 'rgba(110,231,183,0.5)' },
+  { size: 5, top: '10%', left: '55%', duration: '13s', delay: '2.5s', color: 'rgba(253,224,71,0.35)' },
 ];
 
 const HomePage = () => {
@@ -19,7 +19,7 @@ const HomePage = () => {
     if (!orbRef.current) return;
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
-    const dx = (clientX / innerWidth  - 0.5) * 40;
+    const dx = (clientX / innerWidth - 0.5) * 40;
     const dy = (clientY / innerHeight - 0.5) * 30;
     orbRef.current.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`;
   }, []);
@@ -38,13 +38,13 @@ const HomePage = () => {
           key={i}
           className="hero-particle"
           style={{
-            width:  p.size,
+            width: p.size,
             height: p.size,
-            top:    p.top,
-            left:   p.left,
-            background:        p.color,
+            top: p.top,
+            left: p.left,
+            background: p.color,
             animationDuration: p.duration,
-            animationDelay:    p.delay,
+            animationDelay: p.delay,
             boxShadow: `0 0 ${p.size * 3}px ${p.color}`,
           }}
         />
@@ -74,9 +74,9 @@ const HomePage = () => {
 
           <div className="flex items-center gap-6 sm:gap-8">
             <div className="hidden md:flex items-center gap-8">
-              <a href="#process"      className="nav-link">Process</a>
-              <a href="#solutions"    className="nav-link">Solutions</a>
-              <a href="#work"         className="nav-link">Work</a>
+              <a href="#process" className="nav-link">Process</a>
+              <a href="#solutions" className="nav-link">Solutions</a>
+              <a href="#work" className="nav-link">Work</a>
               <a href="#testimonials" className="nav-link">Testimonials</a>
             </div>
             <button className="btn-primary-orange px-5 py-2 text-xs sm:text-sm">
@@ -107,7 +107,7 @@ const HomePage = () => {
           }}
         >
           The content and distribution system
-          <br />
+
           for the leaders in{' '}
           <span className="relative inline-block text-shimmer">
             tech and media
@@ -142,7 +142,7 @@ const HomePage = () => {
           className="opacity-0"
           style={{ animation: 'fadeInUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.85s forwards' }}
         >
-          <button className="btn-primary-orange cta-float px-8 py-4 text-sm sm:text-base tracking-wide font-semibold shadow-xl">
+          <button className="btn-primary-orange px-8 py-4 text-sm sm:text-base tracking-wide font-semibold shadow-xl">
             Apply to Work With Us
           </button>
         </div>
