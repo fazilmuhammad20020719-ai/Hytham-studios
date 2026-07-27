@@ -4,6 +4,7 @@ import ContentSystematized from '../components/ContentSystematized';
 import HighLevelRepurposing from '../components/HighLevelRepurposing';
 import ViralEdits from '../components/ViralEdits';
 import LongFormStandard from '../components/LongFormStandard';
+import SpotlightSection from '../components/SpotlightSection';
 
 /* ─── Floating Particle Config ─── */
 const PARTICLES = [
@@ -215,6 +216,9 @@ const HomePage = () => {
 
       {/* ── LONG FORM STANDARD SECTION ── */}
       <LongFormStandard />
+
+      {/* ── MMH SPOTLIGHT SECTION ── */}
+      <SpotlightSection />
 
     </div>
   );
