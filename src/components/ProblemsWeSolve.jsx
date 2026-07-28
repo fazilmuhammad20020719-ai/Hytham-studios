@@ -157,7 +157,7 @@ const ProblemsWeSolve = () => {
           </div>
         </div>
 
-        <div className="min-h-[500px] sm:min-h-[600px] flex flex-col md:flex-row items-center justify-between gap-8 relative">
+        <div className="min-h-[500px] sm:min-h-[600px] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 relative">
 
           {/* SVG Animated Connector Beams (Desktop view background) */}
           <div className="absolute inset-0 pointer-events-none hidden md:block z-0">
@@ -175,7 +175,7 @@ const ProblemsWeSolve = () => {
           </div>
 
           {/* ── LEFT COLUMN CARDS ── */}
-          <div className="flex flex-col gap-6 sm:gap-7 w-full md:w-60 items-center md:items-start z-10">
+          <div className="flex flex-row md:flex-col flex-wrap justify-center gap-3 sm:gap-6 sm:gap-7 w-full md:w-60 items-center md:items-start z-10">
             {leftRoles.map((role) => {
               const isActive = activeId === role.id;
               return (
@@ -189,9 +189,9 @@ const ProblemsWeSolve = () => {
                     animation: `floatY 5s ease-in-out infinite`,
                     animationDelay: role.floatDelay,
                   }}
-                  className={`w-56 sm:w-60 bg-[#080d16]/90 backdrop-blur-xl border ${
+                  className={`w-full max-w-[240px] sm:w-56 md:w-60 bg-[#080d16]/90 backdrop-blur-xl border ${
                     isActive ? 'border-white/50 scale-108 rotate-0 z-30' : 'border-white/[0.1] hover:border-white/30'
-                  } rounded-2xl p-5 flex flex-col items-center justify-between text-center transition-all duration-500 ${role.tilt} cursor-pointer group select-none relative overflow-hidden`}
+                  } rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-between text-center transition-all duration-500 ${role.tilt} cursor-pointer group select-none relative overflow-hidden`}
                 >
                   {/* Subtle top color border glow line */}
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${role.accentColor} opacity-70 group-hover:opacity-100 transition-opacity`} />
@@ -216,7 +216,7 @@ const ProblemsWeSolve = () => {
           </div>
 
           {/* ── CENTER INTERACTIVE HUB ── */}
-          <div className="text-center relative z-20 my-6 md:my-0 px-4 max-w-md w-full bg-[#0a0f1a]/85 backdrop-blur-2xl border border-white/[0.14] rounded-3xl p-8 sm:p-10 shadow-2xl transition-all duration-500">
+          <div className="text-center relative z-20 my-4 md:my-0 px-4 max-w-[90vw] sm:max-w-md w-full bg-[#0a0f1a]/85 backdrop-blur-2xl border border-white/[0.14] rounded-3xl p-6 sm:p-10 shadow-2xl transition-all duration-500">
             
             {/* Section Title */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white tracking-tight leading-tight">
@@ -249,7 +249,7 @@ const ProblemsWeSolve = () => {
           </div>
 
           {/* ── RIGHT COLUMN CARDS ── */}
-          <div className="flex flex-col gap-6 sm:gap-7 w-full md:w-60 items-center md:items-end z-10">
+          <div className="flex flex-row md:flex-col flex-wrap justify-center gap-3 sm:gap-6 sm:gap-7 w-full md:w-60 items-center md:items-end z-10">
             {rightRoles.map((role) => {
               const isActive = activeId === role.id;
               return (
@@ -263,9 +263,9 @@ const ProblemsWeSolve = () => {
                     animation: `floatY 5s ease-in-out infinite`,
                     animationDelay: role.floatDelay,
                   }}
-                  className={`w-56 sm:w-60 bg-[#080d16]/90 backdrop-blur-xl border ${
+                  className={`w-full max-w-[240px] sm:w-56 md:w-60 bg-[#080d16]/90 backdrop-blur-xl border ${
                     isActive ? 'border-white/50 scale-108 rotate-0 z-30' : 'border-white/[0.1] hover:border-white/30'
-                  } rounded-2xl p-5 flex flex-col items-center justify-between text-center transition-all duration-500 ${role.tilt} cursor-pointer group select-none relative overflow-hidden`}
+                  } rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-between text-center transition-all duration-500 ${role.tilt} cursor-pointer group select-none relative overflow-hidden`}
                 >
                   {/* Subtle top color border glow line */}
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${role.accentColor} opacity-70 group-hover:opacity-100 transition-opacity`} />

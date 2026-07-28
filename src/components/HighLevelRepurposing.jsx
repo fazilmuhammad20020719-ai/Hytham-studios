@@ -108,8 +108,9 @@ const HighLevelRepurposing = () => {
     const ctx = canvas.getContext('2d');
     let animationFrameId;
 
-    const width = 480;
-    const height = 480;
+    const isMobile = window.innerWidth < 640;
+    const width = isMobile ? 320 : 480;
+    const height = isMobile ? 320 : 480;
     canvas.width = width * 2; // High DPI
     canvas.height = height * 2;
     ctx.scale(2, 2);
@@ -121,8 +122,8 @@ const HighLevelRepurposing = () => {
 
     const latCount = 22;
     const lonCount = 34;
-    const radius = 165;
-    const orbitRadius = 220;
+    const radius = isMobile ? 110 : 165;
+    const orbitRadius = isMobile ? 148 : 220;
 
     // Energy pulse particles on laser lines
     let pulseProgress = 0;
@@ -146,7 +147,7 @@ const HighLevelRepurposing = () => {
       const cx = width / 2;
       const cy = height / 2;
       const fov = 400;
-      const distance = 440;
+      const distance = isMobile ? 300 : 440;
 
       // ── 1. Calculate and Draw 3D Globe Mesh Grid ──
       const grid = [];
@@ -398,12 +399,12 @@ const HighLevelRepurposing = () => {
           <div
             ref={containerRef}
             onMouseMove={handleMouseMove}
-            className="lg:col-span-7 relative w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] mx-auto flex items-center justify-center cursor-grab active:cursor-grabbing"
+            className="lg:col-span-7 relative w-[320px] h-[320px] sm:w-[480px] sm:h-[480px] mx-auto flex items-center justify-center cursor-grab active:cursor-grabbing"
           >
             {/* 3D Wireframe Globe & Laser Lines Canvas */}
             <canvas
               ref={canvasRef}
-              className="w-[360px] h-[360px] sm:w-[480px] sm:h-[480px] pointer-events-none drop-shadow-[0_0_30px_rgba(129,140,248,0.28)]"
+              className="w-[320px] h-[320px] sm:w-[480px] sm:h-[480px] pointer-events-none drop-shadow-[0_0_30px_rgba(129,140,248,0.28)]"
             />
 
             {/* 5 Real-time 3D Orbiting Badges */}

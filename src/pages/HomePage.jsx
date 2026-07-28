@@ -75,88 +75,63 @@ const HomePage = () => {
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-indigo-600/5 blur-[160px] rounded-full pointer-events-none z-0 animate-[pulseGlow_8s_ease-in-out_infinite]" />
 
         {/* Fixed Overlay Glass Navbar */}
-        <header className="fixed top-0 left-0 right-0 z-50 pt-3 sm:pt-4 px-4 sm:px-6 pointer-events-none">
-          <nav className="glass-nav max-w-5xl mx-auto rounded-full px-5 sm:px-6 py-3 flex items-center justify-between opacity-0 animate-[fadeInDown_0.8s_ease-out_forwards] pointer-events-auto shadow-2xl relative">
-            <a href="#" className="flex items-center gap-2.5 sm:gap-3 group">
+        <header className="fixed top-0 left-0 right-0 z-50 pt-3 sm:pt-4 px-3 sm:px-6 pointer-events-none">
+          <nav className="glass-nav max-w-5xl mx-auto rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between opacity-0 animate-[fadeInDown_0.8s_ease-out_forwards] pointer-events-auto shadow-2xl relative">
+
+            {/* Logo + Brand Name */}
+            <a href="#" className="flex items-center gap-2 sm:gap-3 group shrink-0">
               <img
                 src="/Logo.png"
                 alt="Hytham Studios Logo"
-                className="h-7 sm:h-9 w-auto transition-transform duration-300 group-hover:scale-105"
+                className="h-6 sm:h-8 w-auto transition-transform duration-300 group-hover:scale-105"
               />
-              <span className="text-white font-semibold text-sm sm:text-lg tracking-tight font-display">
+              <span className="text-white font-semibold text-sm sm:text-base lg:text-lg tracking-tight font-display whitespace-nowrap">
                 Hytham Studios
               </span>
             </a>
 
-            <div className="flex items-center gap-3 sm:gap-8">
-              {/* Desktop Nav Links */}
-              <div className="hidden md:flex items-center gap-8">
+            {/* Right side */}
+            <div className="flex items-center gap-2 sm:gap-4">
+              {/* Desktop Nav Links — only on lg+ */}
+              <div className="hidden lg:flex items-center gap-6 xl:gap-8">
                 <a href="#process" className="nav-link">Process</a>
                 <a href="#solutions" className="nav-link">Solutions</a>
                 <a href="#work" className="nav-link">Work</a>
                 <a href="#testimonials" className="nav-link">Testimonials</a>
               </div>
 
-              {/* Desktop Contact CTA */}
-              <a href="#contact" className="hidden sm:inline-block btn-primary-orange px-4 sm:px-5 py-2 text-xs sm:text-sm">
+              {/* Contact CTA — hidden on xs, visible sm+ */}
+              <a href="#contact" className="hidden sm:inline-flex items-center btn-primary-orange px-4 sm:px-5 py-2 text-xs sm:text-sm whitespace-nowrap">
                 Contact
               </a>
 
-              {/* Mobile Hamburger Menu Toggle Button */}
+              {/* Mobile/Tablet Hamburger — shows below lg */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden w-9 h-9 rounded-full bg-white/[0.08] border border-white/10 flex items-center justify-center text-white focus:outline-none"
+                className="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/[0.08] border border-white/10 flex items-center justify-center text-white focus:outline-none shrink-0"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 ) : (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 )}
               </button>
             </div>
 
-            {/* Mobile Glass Menu Drawer Dropdown */}
+            {/* Mobile / Tablet Dropdown Menu */}
             {mobileMenuOpen && (
-              <div className="md:hidden absolute top-full left-0 right-0 mt-3 bg-[#0a0f18]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 shadow-2xl space-y-3 z-50 animate-[fadeInDown_0.3s_ease-out_forwards]">
-                <a
-                  href="#process"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-slate-200 hover:text-white font-medium text-sm py-2 px-3 rounded-lg hover:bg-white/[0.06] transition-colors"
-                >
-                  Process
-                </a>
-                <a
-                  href="#solutions"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-slate-200 hover:text-white font-medium text-sm py-2 px-3 rounded-lg hover:bg-white/[0.06] transition-colors"
-                >
-                  Solutions
-                </a>
-                <a
-                  href="#work"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-slate-200 hover:text-white font-medium text-sm py-2 px-3 rounded-lg hover:bg-white/[0.06] transition-colors"
-                >
-                  Work
-                </a>
-                <a
-                  href="#testimonials"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-slate-200 hover:text-white font-medium text-sm py-2 px-3 rounded-lg hover:bg-white/[0.06] transition-colors"
-                >
-                  Testimonials
-                </a>
-                <div className="pt-2 border-t border-white/10">
-                  <a
-                    href="#contact"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-center btn-primary-orange py-2.5 px-4 text-xs font-semibold rounded-xl"
-                  >
+              <div className="lg:hidden absolute top-full left-0 right-0 mt-3 bg-[#0a0f18]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 shadow-2xl space-y-1 z-50 animate-[fadeInDown_0.3s_ease-out_forwards]">
+                <a href="#process" onClick={() => setMobileMenuOpen(false)} className="block text-slate-200 hover:text-white font-medium text-sm py-2.5 px-3 rounded-lg hover:bg-white/[0.06] transition-colors">Process</a>
+                <a href="#solutions" onClick={() => setMobileMenuOpen(false)} className="block text-slate-200 hover:text-white font-medium text-sm py-2.5 px-3 rounded-lg hover:bg-white/[0.06] transition-colors">Solutions</a>
+                <a href="#work" onClick={() => setMobileMenuOpen(false)} className="block text-slate-200 hover:text-white font-medium text-sm py-2.5 px-3 rounded-lg hover:bg-white/[0.06] transition-colors">Work</a>
+                <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="block text-slate-200 hover:text-white font-medium text-sm py-2.5 px-3 rounded-lg hover:bg-white/[0.06] transition-colors">Testimonials</a>
+                <div className="pt-3 border-t border-white/10">
+                  <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-center btn-primary-orange py-3 px-4 text-sm font-semibold rounded-xl">
                     Contact Us
                   </a>
                 </div>
@@ -227,9 +202,9 @@ const HomePage = () => {
         </main>
 
         {/* Stats Bar */}
-        <footer className="relative z-10 max-w-5xl mx-auto w-full px-6 pb-12 pt-4">
+        <footer className="relative z-10 max-w-5xl mx-auto w-full px-4 sm:px-6 pb-10 sm:pb-12 pt-4">
           <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 opacity-0"
+            className="flex flex-row justify-around md:grid md:grid-cols-3 gap-4 sm:gap-8 opacity-0"
             style={{ animation: 'fadeInUp 1s ease-out 1.15s forwards' }}
           >
 
@@ -240,7 +215,7 @@ const HomePage = () => {
                   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                 </svg>
               </div>
-              <span className="text-xl sm:text-2xl font-bold text-white tracking-tight font-display">1B+</span>
+              <span className="text-lg sm:text-2xl font-bold text-white tracking-tight font-display">1B+</span>
               <span className="text-xs sm:text-sm text-slate-400 font-medium mt-1">views generated</span>
             </div>
 
@@ -251,7 +226,7 @@ const HomePage = () => {
                   <path d="M12 2L8.5 8.5H2l5.25 4.75L5 20l7-4.5L19 20l-2.25-6.75L22 8.5h-6.5L12 2z" />
                 </svg>
               </div>
-              <span className="text-xl sm:text-2xl font-bold text-white tracking-tight font-display">4 Years</span>
+              <span className="text-lg sm:text-2xl font-bold text-white tracking-tight font-display">4 Years</span>
               <span className="text-xs sm:text-sm text-slate-400 font-medium mt-1">of brand building</span>
             </div>
 
@@ -264,7 +239,7 @@ const HomePage = () => {
                   <polyline points="10 12 12 14 14 12" />
                 </svg>
               </div>
-              <span className="text-xl sm:text-2xl font-bold text-white tracking-tight font-display">8,000+</span>
+              <span className="text-lg sm:text-2xl font-bold text-white tracking-tight font-display">8,000+</span>
               <span className="text-xs sm:text-sm text-slate-400 font-medium mt-1">videos created</span>
             </div>
 

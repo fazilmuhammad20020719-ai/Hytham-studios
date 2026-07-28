@@ -42,7 +42,7 @@ const LongFormStandard = () => {
 
         {/* ── Section Header ── */}
         <div className="text-left mb-14 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white tracking-tight inline-flex items-center gap-3 relative">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white tracking-tight inline-flex flex-wrap items-center gap-2 sm:gap-3 relative">
             <span>Long form that sets</span>
             <span className="text-[#f5a623] relative">
               the standard

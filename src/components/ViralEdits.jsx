@@ -70,7 +70,7 @@ const ViralEdits = () => {
         </div>
 
         {/* ── 4 Vertical 9:16 Video Cards Grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
           {VIRAL_REELS.map((reel) => (
             <div
               key={reel.id}

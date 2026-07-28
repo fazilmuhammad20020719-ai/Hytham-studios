@@ -182,7 +182,7 @@ const SpotlightSection = () => {
       <div className="mt-24 sm:mt-32 max-w-6xl mx-auto relative">
         
         {/* Dark Grid Background Canvas */}
-        <div className="relative min-h-[480px] sm:min-h-[540px] w-full rounded-3xl bg-[#04060a] border border-white/[0.08] p-8 sm:p-12 overflow-hidden flex flex-col justify-center items-center shadow-2xl">
+        <div className="relative min-h-[320px] sm:min-h-[540px] w-full rounded-3xl bg-[#04060a] border border-white/[0.08] p-5 sm:p-12 overflow-hidden flex flex-col justify-center items-center shadow-2xl">
           
           {/* Subtle Grid Lines Background Overlay */}
           <div 
@@ -197,15 +197,15 @@ const SpotlightSection = () => {
           />
 
           {/* Hand-drawn Top Left Green Swirl / Squiggle Vector */}
-          <div className="absolute top-6 left-6 sm:top-10 sm:left-12 z-10 pointer-events-none opacity-80">
+          <div className="absolute top-6 left-6 sm:top-10 sm:left-12 z-10 pointer-events-none opacity-80 hidden sm:block">
             <svg className="w-16 h-16 sm:w-20 sm:h-20 text-[#86efac]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M 20 70 C 15 35 45 15 75 35 C 95 50 70 80 40 65 C 20 50 35 25 60 30" />
             </svg>
           </div>
 
           {/* Top Left Floating Badge: Purple Scalloped Flower with Clapping Hands */}
-          <div className="absolute top-16 left-20 sm:top-24 sm:left-28 z-20 transform -rotate-12 transition-transform duration-300 hover:scale-110 cursor-pointer">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#b4b0ed] text-[#241354] rounded-2xl flex items-center justify-center shadow-xl border border-purple-300/30 relative">
+          <div className="hidden sm:block absolute top-14 left-14 sm:top-24 sm:left-28 z-20 transform -rotate-12 transition-transform duration-300 hover:scale-110 cursor-pointer">
+            <div className="w-11 h-11 sm:w-16 sm:h-16 bg-[#b4b0ed] text-[#241354] rounded-2xl flex items-center justify-center shadow-xl border border-purple-300/30 relative">
               {/* Clapping Icon */}
               <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12.5 2a2 2 0 0 0-2 2v6.2l-1.4-1.4a2 2 0 0 0-2.8 0 2 2 0 0 0 0 2.8l4.4 4.4a5.5 5.5 0 0 0 7.8 0l3-3a2 2 0 0 0 0-2.8 2 2 0 0 0-2.8 0L17 11.9V4a2 2 0 0 0-2-2h-2.5zM7.5 13.5l-2.8 2.8a3 3 0 0 0 0 4.2 3 3 0 0 0 4.2 0l2.8-2.8-4.2-4.2z" />
@@ -214,15 +214,15 @@ const SpotlightSection = () => {
           </div>
 
           {/* Hand-drawn Top Right Green Swirl / Squiggle Vector */}
-          <div className="absolute top-6 right-6 sm:top-10 sm:right-12 z-10 pointer-events-none opacity-80">
+          <div className="absolute top-6 right-6 sm:top-10 sm:right-12 z-10 pointer-events-none opacity-80 hidden sm:block">
             <svg className="w-16 h-16 sm:w-20 sm:h-20 text-[#86efac]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M 25 30 C 55 20 80 40 65 70 C 50 90 25 70 40 45 C 55 25 80 50 70 75" />
             </svg>
           </div>
 
           {/* Top Right Floating Badge: Mint Green Circle with Smile Icon */}
-          <div className="absolute top-16 right-20 sm:top-24 sm:right-28 z-20 transform rotate-12 transition-transform duration-300 hover:scale-110 cursor-pointer">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#bbf7d0] text-[#064e3b] rounded-full flex items-center justify-center shadow-xl border border-green-300/30">
+          <div className="hidden sm:block absolute top-14 right-14 sm:top-24 sm:right-28 z-20 transform rotate-12 transition-transform duration-300 hover:scale-110 cursor-pointer">
+            <div className="w-11 h-11 sm:w-16 sm:h-16 bg-[#bbf7d0] text-[#064e3b] rounded-full flex items-center justify-center shadow-xl border border-green-300/30">
               <svg className="w-8 h-8 sm:w-9 sm:h-9" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M8 14s1.5 2 4 2 4-2 4-2" />
@@ -233,48 +233,48 @@ const SpotlightSection = () => {
           </div>
 
           {/* ── STICKY NOTES GRID ── */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 w-full max-w-5xl items-center pt-10 sm:pt-14 pb-4">
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 lg:gap-10 w-full max-w-5xl items-center pt-10 sm:pt-14 pb-4">
 
             {/* STICKY NOTE 1: Yellow (Andrew Ross Sorkin) */}
-            <div className="transform md:-rotate-6 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 bg-[#fef08a] text-neutral-900 p-6 sm:p-7 rounded-2xl shadow-2xl flex flex-col justify-between min-h-[220px] sm:min-h-[250px] border border-yellow-300/50 cursor-pointer">
-              <p className="text-sm sm:text-[0.95rem] font-semibold leading-relaxed font-sans text-neutral-900">
+            <div className="transform md:-rotate-6 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 bg-[#fef08a] text-neutral-900 p-4 sm:p-7 rounded-2xl shadow-2xl flex flex-col justify-between min-h-[150px] sm:min-h-[250px] border border-yellow-300/50 cursor-pointer">
+              <p className="text-xs sm:text-[0.95rem] font-semibold leading-relaxed font-sans text-neutral-900">
                 The videos are fantastic. Very happy with what's happening.
               </p>
-              <div className="mt-8 pt-4">
-                <h4 className="font-bold text-sm sm:text-base text-neutral-900 leading-tight">
+              <div className="mt-4 sm:mt-8 pt-3 sm:pt-4">
+                <h4 className="font-bold text-xs sm:text-base text-neutral-900 leading-tight">
                   Andrew Ross Sorkin
                 </h4>
-                <p className="text-xs text-neutral-700 font-medium mt-0.5">
+                <p className="text-[10px] sm:text-xs text-neutral-700 font-medium mt-0.5">
                   American Journalist and Author
                 </p>
               </div>
             </div>
 
             {/* STICKY NOTE 2: Lavender / Purple (Rohit Sirosh) */}
-            <div className="transform md:-translate-y-4 md:rotate-1 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 bg-[#c4b5fd] text-neutral-900 p-6 sm:p-7 rounded-2xl shadow-2xl flex flex-col justify-between min-h-[220px] sm:min-h-[250px] border border-purple-300/50 cursor-pointer">
-              <p className="text-sm sm:text-[0.95rem] font-semibold leading-relaxed font-sans text-neutral-900">
+            <div className="transform md:-translate-y-4 md:rotate-1 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 bg-[#c4b5fd] text-neutral-900 p-4 sm:p-7 rounded-2xl shadow-2xl flex flex-col justify-between min-h-[150px] sm:min-h-[250px] border border-purple-300/50 cursor-pointer">
+              <p className="text-xs sm:text-[0.95rem] font-semibold leading-relaxed font-sans text-neutral-900">
                 During our YC period, the launch video drove a lot of hype and customers inbound. Super responsive and proactive team.
               </p>
-              <div className="mt-8 pt-4">
-                <h4 className="font-bold text-sm sm:text-base text-neutral-900 leading-tight">
+              <div className="mt-4 sm:mt-8 pt-3 sm:pt-4">
+                <h4 className="font-bold text-xs sm:text-base text-neutral-900 leading-tight">
                   Rohit Sirosh
                 </h4>
-                <p className="text-xs text-neutral-700 font-medium mt-0.5">
+                <p className="text-[10px] sm:text-xs text-neutral-700 font-medium mt-0.5">
                   Founder, Mimos AI
                 </p>
               </div>
             </div>
 
             {/* STICKY NOTE 3: Mint Green (Daniel Del carmen) */}
-            <div className="transform md:rotate-6 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 bg-[#bbf7d0] text-neutral-900 p-6 sm:p-7 rounded-2xl shadow-2xl flex flex-col justify-between min-h-[220px] sm:min-h-[250px] border border-green-300/50 cursor-pointer">
-              <p className="text-sm sm:text-[0.95rem] font-semibold leading-relaxed font-sans text-neutral-900">
+            <div className="transform md:rotate-6 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 bg-[#bbf7d0] text-neutral-900 p-4 sm:p-7 rounded-2xl shadow-2xl flex flex-col justify-between min-h-[150px] sm:min-h-[250px] border border-green-300/50 cursor-pointer">
+              <p className="text-xs sm:text-[0.95rem] font-semibold leading-relaxed font-sans text-neutral-900">
                 The edits have been amazing, the team does a great job operationally too!
               </p>
-              <div className="mt-8 pt-4">
-                <h4 className="font-bold text-sm sm:text-base text-neutral-900 leading-tight">
+              <div className="mt-4 sm:mt-8 pt-3 sm:pt-4">
+                <h4 className="font-bold text-xs sm:text-base text-neutral-900 leading-tight">
                   Daniel Del carmen
                 </h4>
-                <p className="text-xs text-neutral-700 font-medium mt-0.5">
+                <p className="text-[10px] sm:text-xs text-neutral-700 font-medium mt-0.5">
                   Creative Director, Mike Posner
                 </p>
               </div>

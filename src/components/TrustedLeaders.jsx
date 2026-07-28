@@ -147,7 +147,7 @@ const TrustedLeaders = () => {
             </div>
 
             {/* Card Container — 3X Length Vertical Height */}
-            <div className="min-h-[520px] sm:min-h-[580px] bg-[#0c1017] border border-white/[0.12] rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-2xl shadow-black/90 hover:border-amber-500/40 transition-colors duration-300">
+            <div className="min-h-[300px] sm:min-h-[580px] bg-[#0c1017] border border-white/[0.12] rounded-3xl p-6 sm:p-10 flex flex-col justify-between shadow-2xl shadow-black/90 hover:border-amber-500/40 transition-colors duration-300">
               
               {/* Content */}
               <div className="pt-4">
@@ -171,7 +171,7 @@ const TrustedLeaders = () => {
           <div className="relative group transform transition-all duration-500 ease-out md:translate-y-6 hover:translate-y-2 hover:scale-[1.03] hover:z-30">
             
             {/* Card Container — 3X Length Vertical Height */}
-            <div className="min-h-[520px] sm:min-h-[580px] bg-[#0c1017] border border-white/[0.12] rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-2xl shadow-black/90 hover:border-indigo-500/40 transition-colors duration-300">
+            <div className="min-h-[300px] sm:min-h-[580px] bg-[#0c1017] border border-white/[0.12] rounded-3xl p-6 sm:p-10 flex flex-col justify-between shadow-2xl shadow-black/90 hover:border-indigo-500/40 transition-colors duration-300">
               
               {/* Content */}
               <div className="pt-4">
@@ -205,7 +205,7 @@ const TrustedLeaders = () => {
             </div>
 
             {/* Card Container — 3X Length Vertical Height */}
-            <div className="min-h-[520px] sm:min-h-[580px] bg-[#0c1017] border border-white/[0.12] rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-2xl shadow-black/90 hover:border-emerald-500/40 transition-colors duration-300">
+            <div className="min-h-[300px] sm:min-h-[580px] bg-[#0c1017] border border-white/[0.12] rounded-3xl p-6 sm:p-10 flex flex-col justify-between shadow-2xl shadow-black/90 hover:border-emerald-500/40 transition-colors duration-300">
               
               {/* Content */}
               <div className="pt-4">
