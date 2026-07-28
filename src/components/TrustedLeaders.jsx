@@ -79,10 +79,10 @@ const BRANDS = [
 
 const TrustedLeaders = () => {
   return (
-    <section id="testimonials" className="bg-[#05070b] relative z-10 pt-20 pb-36 px-4 sm:px-6 border-t border-white/[0.06]">
+    <section id="testimonials" className="bg-[#05070b] relative z-10 pt-20 pb-36 px-4 sm:px-6 border-t border-white/[0.06] w-full max-w-full overflow-hidden">
 
       {/* Subtle solid dark ambient highlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-indigo-500/5 blur-[150px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[700px] h-[300px] sm:h-[400px] bg-indigo-500/5 blur-[120px] sm:blur-[150px] rounded-full pointer-events-none z-0" />
 
       {/* ── Section Title: Trusted by Industry Leaders ── */}
       <div className="text-center mb-14 sm:mb-20 relative z-10">

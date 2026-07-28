@@ -60,11 +60,11 @@ const WaysToWork = () => {
   ];
 
   return (
-    <section id="process" className="bg-gradient-to-b from-[#070b14] via-[#0b101d] to-[#070b14] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-b border-white/[0.08] overflow-hidden">
+    <section id="process" className="bg-gradient-to-b from-[#070b14] via-[#0b101d] to-[#070b14] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-b border-white/[0.08] w-full max-w-full overflow-hidden">
       
       {/* Background Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-amber-500/8 blur-[180px] rounded-full pointer-events-none z-0" />
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[400px] bg-indigo-600/8 blur-[160px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[900px] h-[320px] sm:h-[550px] bg-amber-500/8 blur-[120px] sm:blur-[180px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/3 left-1/4 w-[300px] sm:w-[600px] h-[250px] sm:h-[400px] bg-indigo-600/8 blur-[100px] sm:blur-[160px] rounded-full pointer-events-none z-0" />
 
       {/* Dot Grid Pattern Overlay */}
       <div 

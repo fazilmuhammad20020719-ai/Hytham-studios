@@ -2,11 +2,11 @@ import React from 'react';
 
 const ClientTestimonials = () => {
   return (
-    <section id="testimonials" className="bg-[#05070b] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-white/[0.06] overflow-hidden">
+    <section id="testimonials" className="bg-[#05070b] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-white/[0.06] w-full max-w-full overflow-hidden">
       
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[450px] bg-amber-500/5 blur-[170px] rounded-full pointer-events-none z-0" />
-      <div className="absolute bottom-10 right-1/4 w-[500px] h-[350px] bg-indigo-600/5 blur-[160px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[750px] h-[300px] sm:h-[450px] bg-amber-500/5 blur-[120px] sm:blur-[170px] rounded-full pointer-events-none z-0" />
+      <div className="absolute bottom-10 right-1/4 w-[300px] sm:w-[500px] h-[250px] sm:h-[350px] bg-indigo-600/5 blur-[100px] sm:blur-[160px] rounded-full pointer-events-none z-0" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 

@@ -36,11 +36,11 @@ const ContentSystematized = () => {
   const [activeReel, setActiveReel] = useState(null);
 
   return (
-    <section id="work" className="hero-grid-bg relative z-10 py-20 sm:py-28 px-4 sm:px-6 border-t border-white/[0.06] overflow-hidden">
+    <section id="work" className="hero-grid-bg relative z-10 py-20 sm:py-28 px-4 sm:px-6 border-t border-white/[0.06] w-full max-w-full overflow-hidden">
       
       {/* Ambient background glow */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[300px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none z-0" />
-      <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[300px] bg-indigo-500/5 blur-[140px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/3 left-1/4 w-[300px] sm:w-[500px] h-[250px] sm:h-[300px] bg-amber-500/5 blur-[100px] sm:blur-[140px] rounded-full pointer-events-none z-0" />
+      <div className="absolute bottom-1/3 right-1/4 w-[300px] sm:w-[500px] h-[250px] sm:h-[300px] bg-indigo-500/5 blur-[100px] sm:blur-[140px] rounded-full pointer-events-none z-0" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 

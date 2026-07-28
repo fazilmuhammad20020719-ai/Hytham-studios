@@ -2,10 +2,10 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#040609] relative z-10 pt-20 pb-12 px-4 sm:px-6 border-t border-white/[0.08] overflow-hidden">
+    <footer className="bg-[#040609] relative z-10 pt-20 pb-12 px-4 sm:px-6 border-t border-white/[0.08] w-full max-w-full overflow-hidden">
       
       {/* Subtle Ambient Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-amber-500/5 blur-[160px] rounded-full pointer-events-none z-0" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[320px] sm:w-[800px] h-[250px] sm:h-[300px] bg-amber-500/5 blur-[100px] sm:blur-[160px] rounded-full pointer-events-none z-0" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 

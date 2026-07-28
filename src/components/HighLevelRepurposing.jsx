@@ -344,11 +344,11 @@ const HighLevelRepurposing = () => {
     PLATFORMS_DATA.find((p) => p.id === (hoveredNode || activePlatformId)) || PLATFORMS_DATA[0];
 
   return (
-    <section id="contact" className="bg-[#05070b] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-white/[0.06] overflow-hidden">
+    <section id="contact" className="bg-[#05070b] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-white/[0.06] w-full max-w-full overflow-hidden">
 
       {/* Dynamic Ambient Glow Orbs */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-indigo-600/10 blur-[170px] rounded-full pointer-events-none z-0" />
-      <div className="absolute bottom-1/4 left-1/3 w-[500px] h-[350px] bg-amber-500/5 blur-[150px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[800px] h-[320px] sm:h-[550px] bg-indigo-600/10 blur-[120px] sm:blur-[170px] rounded-full pointer-events-none z-0" />
+      <div className="absolute bottom-1/4 left-1/3 w-[300px] sm:w-[500px] h-[250px] sm:h-[350px] bg-amber-500/5 blur-[100px] sm:blur-[150px] rounded-full pointer-events-none z-0" />
 
       <div className="max-w-6xl mx-auto relative z-10 flex flex-col items-center">
 

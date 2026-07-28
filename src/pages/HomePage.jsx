@@ -44,7 +44,7 @@ const HomePage = () => {
   }, [handleMouseMove]);
 
   return (
-    <div className="bg-[#05070b] min-h-screen selection:bg-hy-orange selection:text-black">
+    <div className="bg-[#05070b] min-h-screen selection:bg-hy-orange selection:text-black w-full max-w-full overflow-x-hidden relative">
 
       {/* ── HERO SECTION WITH GRID BACKGROUND ── */}
       <section className="hero-grid-bg min-h-screen flex flex-col justify-between relative overflow-hidden">
@@ -69,10 +69,10 @@ const HomePage = () => {
         {/* ── Dynamic Glow Orbs ── */}
         <div
           ref={orbRef}
-          className="parallax-orb w-[700px] h-[420px] bg-amber-500/10 blur-[140px]"
+          className="parallax-orb w-[320px] sm:w-[700px] h-[320px] sm:h-[420px] bg-amber-500/10 blur-[100px] sm:blur-[140px]"
           style={{ top: '30%', left: '50%', transform: 'translate(-50%, -50%)' }}
         />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-indigo-600/5 blur-[160px] rounded-full pointer-events-none z-0 animate-[pulseGlow_8s_ease-in-out_infinite]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[340px] sm:w-[900px] h-[340px] sm:h-[450px] bg-indigo-600/5 blur-[120px] sm:blur-[160px] rounded-full pointer-events-none z-0 animate-[pulseGlow_8s_ease-in-out_infinite]" />
 
         {/* ── MOBILE TOPBAR (xs to lg) ── */}
         <header className="fixed top-0 left-0 right-0 z-50 lg:hidden pointer-events-auto">
