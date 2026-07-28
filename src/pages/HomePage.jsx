@@ -5,6 +5,13 @@ import HighLevelRepurposing from '../components/HighLevelRepurposing';
 import ViralEdits from '../components/ViralEdits';
 import LongFormStandard from '../components/LongFormStandard';
 import SpotlightSection from '../components/SpotlightSection';
+import WaysToWork from '../components/WaysToWork';
+import ProblemsWeSolve from '../components/ProblemsWeSolve';
+import TheGoal from '../components/TheGoal';
+import ClientTestimonials from '../components/ClientTestimonials';
+import FAQSection from '../components/FAQSection';
+import Footer from '../components/Footer';
+import ScrollReveal from '../components/ScrollReveal';
 
 /* ─── Floating Particle Config ─── */
 const PARTICLES = [
@@ -67,9 +74,9 @@ const HomePage = () => {
         />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-indigo-600/5 blur-[160px] rounded-full pointer-events-none z-0 animate-[pulseGlow_8s_ease-in-out_infinite]" />
 
-        {/* Floating Glass Navbar */}
-        <header className="relative z-50 pt-4 px-4 sm:px-6">
-          <nav className="glass-nav max-w-5xl mx-auto rounded-full px-6 py-3.5 flex items-center justify-between opacity-0 animate-[fadeInDown_0.8s_ease-out_forwards]">
+        {/* Fixed Overlay Glass Navbar */}
+        <header className="fixed top-0 left-0 right-0 z-50 pt-3 sm:pt-4 px-4 sm:px-6 pointer-events-none">
+          <nav className="glass-nav max-w-5xl mx-auto rounded-full px-6 py-3.5 flex items-center justify-between opacity-0 animate-[fadeInDown_0.8s_ease-out_forwards] pointer-events-auto shadow-2xl">
             <a href="#" className="flex items-center gap-3 group">
               <img
                 src="/Logo.png"
@@ -88,9 +95,9 @@ const HomePage = () => {
                 <a href="#work" className="nav-link">Work</a>
                 <a href="#testimonials" className="nav-link">Testimonials</a>
               </div>
-              <button className="btn-primary-orange px-5 py-2 text-xs sm:text-sm">
+              <a href="#contact" className="btn-primary-orange px-5 py-2 text-xs sm:text-sm inline-block">
                 Contact
-              </button>
+              </a>
             </div>
           </nav>
         </header>
@@ -150,9 +157,9 @@ const HomePage = () => {
             className="opacity-0"
             style={{ animation: 'fadeInUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.85s forwards' }}
           >
-            <button className="btn-primary-orange px-8 py-4 text-sm sm:text-base tracking-wide font-semibold shadow-xl">
+            <a href="#contact" className="btn-primary-orange px-8 py-4 text-sm sm:text-base tracking-wide font-semibold shadow-xl inline-block">
               Apply to Work With Us
-            </button>
+            </a>
           </div>
         </main>
 
@@ -203,22 +210,62 @@ const HomePage = () => {
       </section>
 
       {/* ── TRUSTED LEADERS SECTION ── */}
-      <TrustedLeaders />
+      <ScrollReveal duration={0.9} distance="30px">
+        <TrustedLeaders />
+      </ScrollReveal>
 
       {/* ── CONTENT PRODUCTION, SYSTEMATIZED SECTION ── */}
-      <ContentSystematized />
+      <ScrollReveal duration={0.9} distance="35px">
+        <ContentSystematized />
+      </ScrollReveal>
 
       {/* ── HIGH LEVEL REPURPOSING SECTION ── */}
-      <HighLevelRepurposing />
+      <ScrollReveal duration={0.9} distance="35px">
+        <HighLevelRepurposing />
+      </ScrollReveal>
 
       {/* ── VIRAL EDITS SECTION ── */}
-      <ViralEdits />
+      <ScrollReveal duration={0.9} distance="35px">
+        <ViralEdits />
+      </ScrollReveal>
 
       {/* ── LONG FORM STANDARD SECTION ── */}
-      <LongFormStandard />
+      <ScrollReveal duration={0.9} distance="35px">
+        <LongFormStandard />
+      </ScrollReveal>
 
       {/* ── MMH SPOTLIGHT SECTION ── */}
-      <SpotlightSection />
+      <ScrollReveal duration={0.9} distance="35px">
+        <SpotlightSection />
+      </ScrollReveal>
+
+      {/* ── THREE WAYS TO WORK WITH US SECTION ── */}
+      <ScrollReveal duration={0.9} distance="35px">
+        <WaysToWork />
+      </ScrollReveal>
+
+      {/* ── PROBLEMS WE SOLVE SECTION ── */}
+      <ScrollReveal duration={0.9} distance="35px">
+        <ProblemsWeSolve />
+      </ScrollReveal>
+
+      {/* ── THE GOAL SECTION ── */}
+      <ScrollReveal duration={0.9} distance="35px">
+        <TheGoal />
+      </ScrollReveal>
+
+      {/* ── CLIENT TESTIMONIALS SECTION ── */}
+      <ScrollReveal duration={0.9} distance="35px">
+        <ClientTestimonials />
+      </ScrollReveal>
+
+      {/* ── FAQS SECTION ── */}
+      <ScrollReveal duration={0.9} distance="35px">
+        <FAQSection />
+      </ScrollReveal>
+
+      {/* ── FOOTER ── */}
+      <Footer />
 
     </div>
   );

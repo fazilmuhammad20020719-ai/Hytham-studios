@@ -5,12 +5,13 @@ const SpotlightSection = () => {
   const [isMuted, setIsMuted] = useState(true);
 
   return (
-    <section className="bg-[#05070b] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-white/[0.06] overflow-hidden">
+    <section className="bg-[#05070b] relative z-10 py-20 sm:py-28 px-4 sm:px-6 border-t border-white/[0.06] overflow-hidden">
       
       {/* Ambient Background Glow */}
-      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-indigo-600/5 blur-[160px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-indigo-600/5 blur-[160px] rounded-full pointer-events-none z-0" />
       <div className="absolute bottom-10 right-1/4 w-[500px] h-[350px] bg-amber-500/5 blur-[150px] rounded-full pointer-events-none z-0" />
 
+      {/* ── TOP CONTAINER: Text & Video Player ── */}
       <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
         {/* ── LEFT COLUMN: Text & CTA ── */}
@@ -40,9 +41,9 @@ const SpotlightSection = () => {
           </p>
 
           {/* CTA Button */}
-          <button className="btn-primary-orange px-8 py-3.5 text-sm sm:text-base tracking-wide font-semibold shadow-xl hover:scale-105 transition-transform duration-300">
+          <a href="#contact" className="btn-primary-orange px-8 py-3.5 text-sm sm:text-base tracking-wide font-semibold shadow-xl hover:scale-105 transition-transform duration-300 inline-block">
             Book a Discovery Call
-          </button>
+          </a>
 
         </div>
 
@@ -64,28 +65,20 @@ const SpotlightSection = () => {
             <div className="relative z-20 flex items-center justify-between">
               <button
                 onClick={() => setIsMuted(!isMuted)}
-                className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md text-white text-xs font-medium border border-white/15 flex items-center gap-2 hover:bg-white/20 transition-colors shadow-lg"
+                className="px-3.5 py-1.5 rounded-lg bg-black/60 backdrop-blur-md text-white text-xs font-medium border border-white/15 flex items-center gap-2 hover:bg-white/20 transition-colors shadow-lg"
               >
                 <span>{isMuted ? '🔇 Enable sound' : '🔊 Sound enabled'}</span>
               </button>
             </div>
 
-            {/* ── CENTER: Play/Pause Overlay Button ── */}
-            <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="pointer-events-auto w-14 h-14 rounded-full bg-amber-400/90 text-black flex items-center justify-center shadow-2xl opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
-              >
-                {isPlaying ? (
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                  </svg>
-                ) : (
-                  <svg className="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                )}
-              </button>
+            {/* Subtitles Simulation Overlay */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-center pointer-events-none w-full px-4">
+              <span className="text-white text-lg sm:text-xl font-semibold tracking-wide drop-shadow-lg">
+                With the average
+              </span>
+              <div className="mt-8 text-white/90 text-xs sm:text-sm font-medium drop-shadow bg-black/40 px-3 py-1 rounded-md inline-block max-w-md mx-auto">
+                With the average professional now switching
+              </div>
             </div>
 
             {/* ── BOTTOM BAR: Video Controller & Scrub Bar ── */}
@@ -183,6 +176,113 @@ const SpotlightSection = () => {
           </div>
         </div>
 
+      </div>
+
+      {/* ── BOTTOM CONTAINER: Sticky Notes & Testimonials Grid Canvas ── */}
+      <div className="mt-24 sm:mt-32 max-w-6xl mx-auto relative">
+        
+        {/* Dark Grid Background Canvas */}
+        <div className="relative min-h-[480px] sm:min-h-[540px] w-full rounded-3xl bg-[#04060a] border border-white/[0.08] p-8 sm:p-12 overflow-hidden flex flex-col justify-center items-center shadow-2xl">
+          
+          {/* Subtle Grid Lines Background Overlay */}
+          <div 
+            className="absolute inset-0 pointer-events-none opacity-40"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px)
+              `,
+              backgroundSize: '40px 40px'
+            }}
+          />
+
+          {/* Hand-drawn Top Left Green Swirl / Squiggle Vector */}
+          <div className="absolute top-6 left-6 sm:top-10 sm:left-12 z-10 pointer-events-none opacity-80">
+            <svg className="w-16 h-16 sm:w-20 sm:h-20 text-[#86efac]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M 20 70 C 15 35 45 15 75 35 C 95 50 70 80 40 65 C 20 50 35 25 60 30" />
+            </svg>
+          </div>
+
+          {/* Top Left Floating Badge: Purple Scalloped Flower with Clapping Hands */}
+          <div className="absolute top-16 left-20 sm:top-24 sm:left-28 z-20 transform -rotate-12 transition-transform duration-300 hover:scale-110 cursor-pointer">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#b4b0ed] text-[#241354] rounded-2xl flex items-center justify-center shadow-xl border border-purple-300/30 relative">
+              {/* Clapping Icon */}
+              <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.5 2a2 2 0 0 0-2 2v6.2l-1.4-1.4a2 2 0 0 0-2.8 0 2 2 0 0 0 0 2.8l4.4 4.4a5.5 5.5 0 0 0 7.8 0l3-3a2 2 0 0 0 0-2.8 2 2 0 0 0-2.8 0L17 11.9V4a2 2 0 0 0-2-2h-2.5zM7.5 13.5l-2.8 2.8a3 3 0 0 0 0 4.2 3 3 0 0 0 4.2 0l2.8-2.8-4.2-4.2z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Hand-drawn Top Right Green Swirl / Squiggle Vector */}
+          <div className="absolute top-6 right-6 sm:top-10 sm:right-12 z-10 pointer-events-none opacity-80">
+            <svg className="w-16 h-16 sm:w-20 sm:h-20 text-[#86efac]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M 25 30 C 55 20 80 40 65 70 C 50 90 25 70 40 45 C 55 25 80 50 70 75" />
+            </svg>
+          </div>
+
+          {/* Top Right Floating Badge: Mint Green Circle with Smile Icon */}
+          <div className="absolute top-16 right-20 sm:top-24 sm:right-28 z-20 transform rotate-12 transition-transform duration-300 hover:scale-110 cursor-pointer">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#bbf7d0] text-[#064e3b] rounded-full flex items-center justify-center shadow-xl border border-green-300/30">
+              <svg className="w-8 h-8 sm:w-9 sm:h-9" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" y1="9" x2="9.01" y2="9" strokeWidth="3" strokeLinecap="round" />
+                <line x1="15" y1="9" x2="15.01" y2="9" strokeWidth="3" strokeLinecap="round" />
+              </svg>
+            </div>
+          </div>
+
+          {/* ── STICKY NOTES GRID ── */}
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 w-full max-w-5xl items-center pt-10 sm:pt-14 pb-4">
+
+            {/* STICKY NOTE 1: Yellow (Andrew Ross Sorkin) */}
+            <div className="transform md:-rotate-6 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 bg-[#fef08a] text-neutral-900 p-6 sm:p-7 rounded-2xl shadow-2xl flex flex-col justify-between min-h-[220px] sm:min-h-[250px] border border-yellow-300/50 cursor-pointer">
+              <p className="text-sm sm:text-[0.95rem] font-semibold leading-relaxed font-sans text-neutral-900">
+                The videos are fantastic. Very happy with what's happening.
+              </p>
+              <div className="mt-8 pt-4">
+                <h4 className="font-bold text-sm sm:text-base text-neutral-900 leading-tight">
+                  Andrew Ross Sorkin
+                </h4>
+                <p className="text-xs text-neutral-700 font-medium mt-0.5">
+                  American Journalist and Author
+                </p>
+              </div>
+            </div>
+
+            {/* STICKY NOTE 2: Lavender / Purple (Rohit Sirosh) */}
+            <div className="transform md:-translate-y-4 md:rotate-1 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 bg-[#c4b5fd] text-neutral-900 p-6 sm:p-7 rounded-2xl shadow-2xl flex flex-col justify-between min-h-[220px] sm:min-h-[250px] border border-purple-300/50 cursor-pointer">
+              <p className="text-sm sm:text-[0.95rem] font-semibold leading-relaxed font-sans text-neutral-900">
+                During our YC period, the launch video drove a lot of hype and customers inbound. Super responsive and proactive team.
+              </p>
+              <div className="mt-8 pt-4">
+                <h4 className="font-bold text-sm sm:text-base text-neutral-900 leading-tight">
+                  Rohit Sirosh
+                </h4>
+                <p className="text-xs text-neutral-700 font-medium mt-0.5">
+                  Founder, Mimos AI
+                </p>
+              </div>
+            </div>
+
+            {/* STICKY NOTE 3: Mint Green (Daniel Del carmen) */}
+            <div className="transform md:rotate-6 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 bg-[#bbf7d0] text-neutral-900 p-6 sm:p-7 rounded-2xl shadow-2xl flex flex-col justify-between min-h-[220px] sm:min-h-[250px] border border-green-300/50 cursor-pointer">
+              <p className="text-sm sm:text-[0.95rem] font-semibold leading-relaxed font-sans text-neutral-900">
+                The edits have been amazing, the team does a great job operationally too!
+              </p>
+              <div className="mt-8 pt-4">
+                <h4 className="font-bold text-sm sm:text-base text-neutral-900 leading-tight">
+                  Daniel Del carmen
+                </h4>
+                <p className="text-xs text-neutral-700 font-medium mt-0.5">
+                  Creative Director, Mike Posner
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
 
     </section>

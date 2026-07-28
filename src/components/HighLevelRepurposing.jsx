@@ -343,7 +343,7 @@ const HighLevelRepurposing = () => {
     PLATFORMS_DATA.find((p) => p.id === (hoveredNode || activePlatformId)) || PLATFORMS_DATA[0];
 
   return (
-    <section className="bg-[#05070b] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-white/[0.06] overflow-hidden">
+    <section id="contact" className="bg-[#05070b] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-white/[0.06] overflow-hidden">
 
       {/* Dynamic Ambient Glow Orbs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-indigo-600/10 blur-[170px] rounded-full pointer-events-none z-0" />

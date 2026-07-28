@@ -20,6 +20,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-hy-dark text-hy-white font-sans antialiased selection:bg-hy-orange selection:text-black;
   }

@@ -40,7 +40,7 @@ const ViralEdits = () => {
   const [activeModalReel, setActiveModalReel] = useState(null);
 
   return (
-    <section className="bg-[#05070b] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-white/[0.06] overflow-hidden">
+    <section id="work" className="bg-[#05070b] relative z-10 py-24 sm:py-32 px-4 sm:px-6 border-t border-white/[0.06] overflow-hidden">
       
       {/* Ambient background glow */}
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-amber-500/5 blur-[160px] rounded-full pointer-events-none z-0" />
