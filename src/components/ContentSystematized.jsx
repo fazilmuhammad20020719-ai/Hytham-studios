@@ -46,15 +46,6 @@ const ContentSystematized = () => {
 
         {/* ── Section Title & Subtitle ── */}
         <div className="mb-12 sm:mb-16 relative">
-          
-          {/* Hand-drawn Green Sparkle / Burst Doodle above title */}
-          <div className="absolute -top-8 left-64 sm:left-80 pointer-events-none hidden sm:block">
-            <svg className="w-8 h-8 text-[#6ee7b7] opacity-90" viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-              <path d="M 8 26 C 14 18 18 12 24 6" />
-              <path d="M 16 28 C 22 22 26 16 32 10" />
-              <path d="M 4 16 C 10 14 18 12 26 10" />
-            </svg>
-          </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white tracking-tight leading-[1.15]">
             Content Production,<br />

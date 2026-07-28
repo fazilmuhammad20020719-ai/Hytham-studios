@@ -173,18 +173,6 @@ const HomePage = () => {
             for the leaders in{' '}
             <span className="relative inline-block text-shimmer">
               tech and media
-              <svg
-                className="absolute -top-2 -right-6 sm:-right-7 w-6 h-6 sm:w-7 sm:h-7 text-indigo-300/80 hidden sm:block pointer-events-none"
-                style={{ animation: 'scaleIn 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.9s both' }}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              >
-                <path d="M4 16C7 10 12 6 18 4" />
-                <path d="M12 20C16 17 19 13 21 8" />
-              </svg>
             </span>
           </h1>
 

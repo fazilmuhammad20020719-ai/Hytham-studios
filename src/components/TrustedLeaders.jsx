@@ -90,12 +90,6 @@ const TrustedLeaders = () => {
           <span>Trusted by</span>
           <span className="text-[#f5a623] relative">
             Industry Leaders
-            {/* Hand-drawn Green Sparkle Doodle */}
-            <svg className="absolute -top-3 -right-7 sm:-right-8 w-7 h-7 sm:w-8 sm:h-8 text-[#6ee7b7] pointer-events-none" viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-              <path d="M 8 26 C 14 18 18 12 24 6" />
-              <path d="M 16 28 C 22 22 26 16 32 10" />
-              <path d="M 4 16 C 10 14 18 12 26 10" />
-            </svg>
           </span>
         </h2>
       </div>
@@ -118,20 +112,6 @@ const TrustedLeaders = () => {
 
       {/* ── Tilted Glassmorphic Testimonial Cards (3X Vertical Length) ── */}
       <div className="max-w-6xl mx-auto relative z-10 pt-8">
-
-        {/* Top Left Hand-drawn Green Doodle */}
-        <div className="absolute -top-14 left-4 sm:left-12 pointer-events-none z-20 hidden md:block">
-          <svg className="w-16 h-16 text-[#6ee7b7] opacity-80" viewBox="0 0 70 70" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-            <path d="M 15 55 C 20 20, 55 10, 48 32 C 42 50, 20 40, 35 18 C 45 8, 60 22, 55 45" />
-          </svg>
-        </div>
-
-        {/* Top Right Hand-drawn Green Doodle */}
-        <div className="absolute -top-14 right-4 sm:right-12 pointer-events-none z-20 hidden md:block">
-          <svg className="w-16 h-16 text-[#6ee7b7] opacity-80" viewBox="0 0 70 70" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-            <path d="M 55 55 C 50 20, 15 10, 22 32 C 28 50, 50 40, 35 18 C 25 8, 10 22, 15 45" />
-          </svg>
-        </div>
 
         {/* 3 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 items-stretch">

@@ -16,19 +16,6 @@ const ClientTestimonials = () => {
             <span>Client</span>
             <span className="text-[#f5a623] relative">
               Testimonials
-              {/* Hand-drawn Green Sparkle Doodle */}
-              <svg 
-                className="absolute -top-3.5 -right-7 sm:-right-8 w-7 h-7 sm:w-8 sm:h-8 text-[#6ee7b7] pointer-events-none" 
-                viewBox="0 0 36 36" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2.5" 
-                strokeLinecap="round"
-              >
-                <path d="M 8 26 C 14 18 18 12 24 6" />
-                <path d="M 16 28 C 22 22 26 16 32 10" />
-                <path d="M 4 16 C 10 14 18 12 26 10" />
-              </svg>
             </span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base mt-3.5 font-sans">

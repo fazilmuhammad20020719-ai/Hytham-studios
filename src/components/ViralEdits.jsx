@@ -55,12 +55,6 @@ const ViralEdits = () => {
             <br />
             <span className="text-[#f5a623] relative inline-block mt-1">
               edits that go viral
-              {/* Hand-drawn Green Doodle Lines */}
-              <svg className="absolute -top-4 -right-8 sm:-right-10 w-8 h-8 sm:w-9 sm:h-9 text-[#6ee7b7] pointer-events-none" viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <path d="M 8 26 C 14 18 18 12 24 6" />
-                <path d="M 16 28 C 22 22 26 16 32 10" />
-                <path d="M 4 16 C 10 14 18 12 26 10" />
-              </svg>
             </span>
           </h2>
 

@@ -46,12 +46,6 @@ const LongFormStandard = () => {
             <span>Long form that sets</span>
             <span className="text-[#f5a623] relative">
               the standard
-              {/* Hand-drawn Purple/Indigo Radiating Burst Lines */}
-              <svg className="absolute -top-3.5 -right-7 sm:-right-8 w-7 h-7 sm:w-8 sm:h-8 text-indigo-300 pointer-events-none" viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <path d="M 12 8 L 22 2" />
-                <path d="M 18 12 L 28 8" />
-                <path d="M 22 18 L 32 18" />
-              </svg>
             </span>
           </h2>
 
