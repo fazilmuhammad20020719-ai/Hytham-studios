@@ -74,74 +74,82 @@ const HomePage = () => {
         />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-indigo-600/5 blur-[160px] rounded-full pointer-events-none z-0 animate-[pulseGlow_8s_ease-in-out_infinite]" />
 
-        {/* Fixed Overlay Glass Navbar */}
-        <header className="fixed top-0 left-0 right-0 z-50 pt-3 sm:pt-4 px-3 sm:px-6 pointer-events-none">
-          <nav className="glass-nav max-w-5xl mx-auto rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between opacity-0 animate-[fadeInDown_0.8s_ease-out_forwards] pointer-events-auto shadow-2xl relative">
-
-            {/* Logo + Brand Name */}
-            <a href="#" className="flex items-center gap-2 sm:gap-3 group shrink-0">
-              <img
-                src="/Logo.png"
-                alt="Hytham Studios Logo"
-                className="h-6 sm:h-8 w-auto transition-transform duration-300 group-hover:scale-105"
-              />
-              <span className="text-white font-semibold text-sm sm:text-base lg:text-lg tracking-tight font-display whitespace-nowrap">
-                Hytham Studios
-              </span>
+        {/* ── MOBILE TOPBAR (xs to lg) ── */}
+        <header className="fixed top-0 left-0 right-0 z-50 lg:hidden pointer-events-auto">
+          <div className="flex items-center justify-between px-4 py-3 bg-[#070a0f]/90 backdrop-blur-xl border-b border-white/[0.07] shadow-lg">
+            {/* Logo */}
+            <a href="#" className="flex items-center gap-2 group">
+              <img src="/Logo.png" alt="Hytham Studios Logo" className="h-7 w-auto" />
+              <span className="text-white font-semibold text-sm tracking-tight font-display">Hytham Studios</span>
             </a>
+            {/* Hamburger */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="w-9 h-9 rounded-xl bg-white/[0.07] border border-white/10 flex items-center justify-center text-white focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
 
-            {/* Right side */}
-            <div className="flex items-center gap-2 sm:gap-4">
-              {/* Desktop Nav Links — only on lg+ */}
-              <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-                <a href="#process" className="nav-link">Process</a>
-                <a href="#solutions" className="nav-link">Solutions</a>
-                <a href="#work" className="nav-link">Work</a>
-                <a href="#testimonials" className="nav-link">Testimonials</a>
+          {/* Mobile Slide-down Menu — no scroll inside, just links */}
+          {mobileMenuOpen && (
+            <div className="bg-[#070a0f]/98 backdrop-blur-2xl border-b border-white/[0.07] px-4 py-4 space-y-1 shadow-2xl">
+              {[
+                { href: '#process', label: 'Process' },
+                { href: '#solutions', label: 'Solutions' },
+                { href: '#work', label: 'Work' },
+                { href: '#testimonials', label: 'Testimonials' },
+              ].map(({ href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center text-slate-200 font-medium text-sm py-2.5 px-3 rounded-xl hover:bg-white/[0.06] hover:text-white transition-colors"
+                >
+                  {label}
+                </a>
+              ))}
+              <div className="pt-2 mt-1 border-t border-white/[0.08]">
+                <a
+                  href="#contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-center btn-primary-orange py-3 text-sm font-semibold rounded-xl"
+                >
+                  Contact Us
+                </a>
               </div>
-
-              {/* Contact CTA — hidden on xs, visible sm+ */}
-              <a href="#contact" className="hidden sm:inline-flex items-center btn-primary-orange px-4 sm:px-5 py-2 text-xs sm:text-sm whitespace-nowrap">
-                Contact
-              </a>
-
-              {/* Mobile/Tablet Hamburger — shows below lg */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/[0.08] border border-white/10 flex items-center justify-center text-white focus:outline-none shrink-0"
-                aria-label="Toggle Navigation Menu"
-              >
-                {mobileMenuOpen ? (
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                ) : (
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                )}
-              </button>
             </div>
+          )}
+        </header>
 
-            {/* Mobile / Tablet Dropdown Menu */}
-            {mobileMenuOpen && (
-              <div className="lg:hidden absolute top-full left-0 right-0 mt-3 bg-[#0a0f18]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 shadow-2xl space-y-1 z-50 animate-[fadeInDown_0.3s_ease-out_forwards]">
-                <a href="#process" onClick={() => setMobileMenuOpen(false)} className="block text-slate-200 hover:text-white font-medium text-sm py-2.5 px-3 rounded-lg hover:bg-white/[0.06] transition-colors">Process</a>
-                <a href="#solutions" onClick={() => setMobileMenuOpen(false)} className="block text-slate-200 hover:text-white font-medium text-sm py-2.5 px-3 rounded-lg hover:bg-white/[0.06] transition-colors">Solutions</a>
-                <a href="#work" onClick={() => setMobileMenuOpen(false)} className="block text-slate-200 hover:text-white font-medium text-sm py-2.5 px-3 rounded-lg hover:bg-white/[0.06] transition-colors">Work</a>
-                <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="block text-slate-200 hover:text-white font-medium text-sm py-2.5 px-3 rounded-lg hover:bg-white/[0.06] transition-colors">Testimonials</a>
-                <div className="pt-3 border-t border-white/10">
-                  <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-center btn-primary-orange py-3 px-4 text-sm font-semibold rounded-xl">
-                    Contact Us
-                  </a>
-                </div>
-              </div>
-            )}
+        {/* ── DESKTOP PILL NAVBAR (lg+) ── */}
+        <header className="fixed top-0 left-0 right-0 z-50 hidden lg:block pt-4 px-6 pointer-events-none">
+          <nav className="glass-nav max-w-5xl mx-auto rounded-full px-6 py-3 flex items-center justify-between opacity-0 animate-[fadeInDown_0.8s_ease-out_forwards] pointer-events-auto shadow-2xl">
+            <a href="#" className="flex items-center gap-3 group shrink-0">
+              <img src="/Logo.png" alt="Hytham Studios Logo" className="h-8 w-auto transition-transform duration-300 group-hover:scale-105" />
+              <span className="text-white font-semibold text-base xl:text-lg tracking-tight font-display whitespace-nowrap">Hytham Studios</span>
+            </a>
+            <div className="flex items-center gap-7 xl:gap-9">
+              <a href="#process" className="nav-link">Process</a>
+              <a href="#solutions" className="nav-link">Solutions</a>
+              <a href="#work" className="nav-link">Work</a>
+              <a href="#testimonials" className="nav-link">Testimonials</a>
+            </div>
+            <a href="#contact" className="btn-primary-orange px-5 py-2 text-sm whitespace-nowrap">Contact</a>
           </nav>
         </header>
 
         {/* Hero Content */}
-        <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 pt-28 sm:pt-36 pb-16 my-auto">
+        <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 pt-20 sm:pt-36 pb-16 my-auto">
 
           {/* Badge */}
           <div
@@ -154,7 +162,7 @@ const HomePage = () => {
 
           {/* Headline */}
           <h1
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-bold text-white max-w-4xl tracking-tight mb-8 leading-[1.18] opacity-0"
+            className="text-2xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-bold text-white w-full max-w-4xl tracking-tight mb-8 leading-[1.2] sm:leading-[1.18] opacity-0"
             style={{
               fontFamily: "'Bricolage Grotesque', sans-serif",
               animation: 'blurReveal 1s cubic-bezier(0.16,1,0.3,1) 0.25s both',
